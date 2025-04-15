@@ -19,42 +19,41 @@ import (
 
 
 func GitldirC() {
-    gitlDir := ".gitl"
+	gitlDir := ".gitl"
 
-    files := []string{
-        "branches.yml",
-        "COMMIT_EDITMSG.yml",
-        "config.yml",
-        "description.yml",
-        "HEAD.yml",
-        "hooks.yml",
-        "index.yml",
-        "info/exclude.yml",
-        "logs/HEAD.yml",
-        "objects.yml",
-        "refs/heads.yml",
-        "refs/tags.yml",
-        "refs/remotes.yml",
-        "packed-refs.yml",
-    }
+	files := []string{
+		"branches.json",
+		"COMMIT_EDITMSG.json",
+		"config.json",
+		"description.json",
+		"HEAD.json",
+		"hooks.json",
+		"index.json",
+		"info/exclude.json",
+		"logs/HEAD.json",
+		"objects.json",
+		"refs/heads.json",
+		"refs/tags.json",
+		"refs/remotes.json",
+		"packed-refs.json",
+	}
 
-    // Create the directory if it doesn't exist
-    if err := os.MkdirAll(gitlDir, os.ModePerm); err != nil {
-        return
-    }
+	// Create the main .gitl directory
+	if err := os.MkdirAll(gitlDir, os.ModePerm); err != nil {
+		return
+	}
 
-    for _, file := range files {
-        filePath := filepath.Join(gitlDir, file)
+	for _, file := range files {
+		filePath := filepath.Join(gitlDir, file)
 
-        // Create parent directories for the file if they don't exist
-        if err := os.MkdirAll(filepath.Dir(filePath), os.ModePerm); err != nil {
-            continue
-        }
+		// Create parent directories if needed
+		if err := os.MkdirAll(filepath.Dir(filePath), os.ModePerm); err != nil {
+			continue
+		}
 
-        f, err := os.Create(filePath)
-        if err != nil {
-            continue
-        }
-        defer f.Close()
-    }
+		// Write empty JSON object to file
+		if err := os.WriteFile(filePath, []byte("{}"), 0644); err != nil {
+			continue
+		}
+	}
 }

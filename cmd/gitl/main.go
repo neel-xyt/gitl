@@ -1,8 +1,9 @@
 package main
 
 import (
-	"os"
+	//"fmt"
 	"gitl/internal/VersionControl" // Import the VersionControl package
+	"os"
 )
 
 func main() {
@@ -13,7 +14,8 @@ func main() {
 
 	switch os.Args[1] {
 	case "init":
-		versioncontrol.Init() // Call the InitRepo function from the VersionControl package
+		versioncontrol.Init()	
+		versioncontrol.Gmanager()
 	default:
 		println("Unknown command:", os.Args[1])
 	}
