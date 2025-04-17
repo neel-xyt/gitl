@@ -2,7 +2,7 @@ package main
 
 import (
 	//"fmt"
-	"gitl/internal/VersionControl" // Import the VersionControl package
+	"gitl/internal/vcs"
 	"os"
 )
 
@@ -14,8 +14,10 @@ func main() {
 
 	switch os.Args[1] {
 	case "init":
-		versioncontrol.Init()	
-		versioncontrol.Gmanager()
+		vcs.Init()	
+		vcs.Gmanager()
+	case "fsetup": 
+		vcs.Firstsetup()
 	default:
 		println("Unknown command:", os.Args[1])
 	}

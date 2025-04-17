@@ -1,5 +1,4 @@
-// internal/commands/init.go
-package versioncontrol
+package vcs
 
 import (
     "fmt"

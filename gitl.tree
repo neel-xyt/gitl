@@ -1,0 +1,14 @@
+.
+├── cmd
+│   └── gitl
+│       └── main.go
+├── data
+│   └── userinfo.json
+├── gitl.tree
+├── go.mod
+└── internal
+    └── vcs
+        ├── init.go
+        └── manager.go
+
+6 directories, 6 files
