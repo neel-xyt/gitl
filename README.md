@@ -7,7 +7,7 @@
 ## Features
 
 - Manage and configure development environments.
-- Supports jason configurations for easy setup.
+- Supports json configurations for easy setup.
 - Designed with security in mind, preventing unauthorized access and harmful activities.
 
 ## gitl comment's 
@@ -23,7 +23,7 @@ ___
 ### Prerequisites
 
 - Go (version 1.24.1 or higher)
-- jason parser
+- json parser
 
 ### Steps
 
