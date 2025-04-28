@@ -7,7 +7,7 @@
 ## Features
 
 - Manage and configure development environments.
-- Supports YAML and shell configurations for easy setup.
+- Supports jason configurations for easy setup.
 - Designed with security in mind, preventing unauthorized access and harmful activities.
 
 ## gitl comment's 
